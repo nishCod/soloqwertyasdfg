@@ -1,6 +1,13 @@
 <?php
 
 
+function confirm($result){
+    global $connection;
+    if(!$result){
+        die("QUERY FAILED" . mysqli_error($connection));
+    }
+}
+
 function inset_categories(){
     if(isset($_POST["categories"]))
     {
